@@ -41,7 +41,7 @@ func SetupLogger(path string, subPath string) logger.Logger {
 	var setLogger logger.Logger
 	output, err := writer.NewFileWriter(filepath.Join(path, subPath), "log")
 	if err != nil {
-		log.Fatal("request logger setup error: %s", err.Error)
+		log.Fatal("request logger setup error: %s", err.Error())
 	}
 	setLogger = logger.NewHelper(logger.NewLogger(logger.WithOutput(output)))
 	return setLogger
